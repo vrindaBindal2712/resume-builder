@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Resume Builder</h1>
+            <form id="resumeForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone"><br>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address"><br>
+
+                <label for="education">Education:</label>
+                <div id="educationContainer">
+                    <div class="entry">
+                        <textarea name="education" class="education"></textarea>
+                        <button type="button" class="delete-btn" onclick="deleteEntry(this)">Delete</button>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addEducation()">Add Education</button><br>
+
+                <label for="experience">Experience:</label>
+                <div id="experienceContainer">
+                    <div class="entry">
+                        <textarea name="experience" class="experience"></textarea>
+                        <button type="button" class="delete-btn" onclick="deleteEntry(this)">Delete</button>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addExperience()">Add Experience</button><br>
+
+                <label for="skills">Skills:</label>
+                <div id="skillsContainer">
+                    <div class="entry">
+                        <textarea name="skills" class="skills"></textarea>
+                        <button type="button" class="delete-btn" onclick="deleteEntry(this)">Delete</button>
+                    </div>
+                </div>
+                <button type="button" class="add-btn" onclick="addSkills()">Add Skills</button><br>
+
+                <button type="button" onclick="generateResume()">Generate Resume</button>
+                <button type="button" onclick="downloadResume()">Download Resume</button>
+            </form>
+        </div>
+        <div class="preview-container">
+            <h2>Resume Preview</h2>
+            <iframe id="resumePreview" class="resume-frame"></iframe>
+        </div>
+    </div>
+    <script src="resume.js"></script>
+</body>
+</html>
