@@ -6,7 +6,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #e0eafc;
+    background-image: linear-gradient(315deg, #e0eafc 0%, #cfdef3 74%);
 }
 
 .container {
@@ -15,32 +16,59 @@ body {
     width: 95%;
     max-width: 1200px;
     background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .form-container, .preview-container {
     flex: 1;
     padding: 20px;
+    background-color: #f0faff;
 }
 
 h1, h2 {
     margin-top: 0;
+    color: #333;
 }
 
 label {
     display: block;
     margin-top: 10px;
+    color: #555;
+    font-weight: bold;
 }
 
 input, textarea {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     margin-top: 5px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: #007BFF;
+    outline: none;
 }
 
 textarea {
     height: 50px;
+    resize: vertical;
 }
 
 button {
@@ -49,7 +77,9 @@ button {
     background-color: #007BFF;
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 button:hover {
@@ -58,16 +88,18 @@ button:hover {
 
 button:active {
     background-color: #00408d;
+    transform: scale(0.98);
 }
 
 .resume-frame {
     width: 100%;
     height: 90%;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 #educationContainer, #experienceContainer, #skillsContainer {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .entry {
@@ -83,6 +115,8 @@ button:active {
 
 .add-btn {
     background-color: #28a745;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 .add-btn:hover {
@@ -91,11 +125,14 @@ button:active {
 
 .add-btn:active {
     background-color: #1e7e34;
+    transform: scale(0.98);
 }
 
 .delete-btn {
     background-color: #dc3545;
     color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
 .delete-btn:hover {
@@ -104,4 +141,5 @@ button:active {
 
 .delete-btn:active {
     background-color: #bd2130;
+    transform: scale(0.98);
 }
